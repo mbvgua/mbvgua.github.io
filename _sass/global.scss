@@ -1,0 +1,115 @@
+// $bg_colour: #272822
+// $fg_colour: #f8f8f2
+// //accent colours
+// $yellow: #e6db74
+// $green: #a6e22e
+// $orange: #fd971f
+// $purple: #ae81ff
+// $pink: #f92672
+// $blue: #66d9ef
+//
+//
+html,
+body {
+  background: white;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: black;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+.date-meta {
+  text-align: right;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 3rem;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+*:target {
+  background: yellow;
+}
+
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: thin solid black;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
+div.highlighter-rouge code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  border: thin solid black;
+  padding: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.content {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.back-link{
+  text-decoration: none;
+}
+
+.sign-off{
+  text-align: right;
+  font-style: italic;
+}
+
+.footer {
+  font-size: xx-small;
+  font-weight: 300;
+}

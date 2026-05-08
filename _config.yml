@@ -1,0 +1,26 @@
+title: mbvgua
+author: mbvgua
+email: 105845499+mbvgua@users.noreply.github.com
+description: > # description of the site (multiple lines allowed)
+  my space to put things on the internet
+baseurl: ""
+url: ""
+
+favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
+
+# figure out how to remove this, use "global.scss" theme instead
+theme: no-style-please
+theme_config:
+  appearance: "auto" # can be "light", "dark" or "auto"
+  back_home_text: "../" # customize text for homepage link in post layout
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: false # show blog description in home page
+  lowercase_titles: true # show titles in lowercase in lists
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+
+keep_files: [.domains, LICENSE, .git, .gitignore]
