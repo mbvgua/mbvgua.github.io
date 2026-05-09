@@ -15,7 +15,7 @@ Those are my 3 why's :] Also, for anyone who might be curious, I actually did tr
 
 See you in the next one...
 
-<p class="sign-off"> ~ Mbugua Douglas. </p>
+<p class="sign-off"> ~ mbvgua. </p>
 
 ---
 {: data-content="footnotes"}
