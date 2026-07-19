@@ -2,7 +2,9 @@
 layout: home
 ---
 
-I am a programmer and a floss enthusiast with a keen interest in low level systems.
+Hi! I'm Mbugua, a programmer and floss enthusiast who enjoys learning by doing.
 
-This is my (in)frequently updated site, which contains documentation to some of the 
-things I have done, I am doing or look forward to completing.
+This is my (in)frequently updated site, which contains documentation to some of the things I have done or are currently doing.
+
+> "The limits of my language are the limits of my mind. All I know is what I have words for"
+> ~ Ludwig Wittgenstein

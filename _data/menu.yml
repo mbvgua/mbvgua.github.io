@@ -1,10 +1,10 @@
 entries:
   - title: places I frequent :)
     entries:
-      - title: mail
-        url: mailto:mbvgua@duck.com
       - title: github
         url: https://github.com/mbvgua
+      - title: mail
+        url: mailto:mbvgua+dev@gmail.com
 
   - title: blog posts
     post_list:
