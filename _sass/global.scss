@@ -1,23 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
-$main-font: 'JetBrains Mono', monospace;
+$main-font: 'Lora';
+$code-font: 'JetBrains Mono', monospace;
 $alt-font: 'Fira Mono', monospace;
 
-// $bg_colour: #272822
-// $fg_colour: #f8f8f2
-// //accent colours
-// $yellow: #e6db74
-// $green: #a6e22e
-// $orange: #fd971f
-// $purple: #ae81ff
-// $pink: #f92672
-// $blue: #66d9ef
-
-html,
-body {
-  background: white;
-  font-family: $main-font;
-}
+// monokai colorscheme
+$bg-colour: #272822;
+$bg-secondary: #3e3d32; // For code blocks, blockquotes, or card backgrounds
+$fg-colour: #f8f8f2;
+$yellow: #e6db74;
+$green: #a6e22e;
+$orange: #fd971f;
+$purple: #ae81ff;
+$pink: #f92672;
+$blue: #66d9ef;
+$grey-comment: #75715e; // Perfect for dates, metadata, and captions
+$selection-bg: #49483e; // For text selection highlight
 
 html {
   height: 100%;
@@ -25,60 +24,80 @@ html {
 }
 
 body {
-  color: black;
-  font-size: 16px;
-  line-height: 1.4;
+  background-color: $bg-colour;
+  color: $fg-colour;
+  font-family: $main-font, serif;
+  font-size: 22px;
   margin: 0;
-  min-height: 100%;
+  line-height: 1.6;
   overflow-wrap: break-word;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 2rem 2rem;
 }
 
-/* Desktop Styles */
-@media (min-width: 768px) {
-  body {
-    font-size: 20px;
-    line-height: 1.6; 
-  }
-}
-
-.date-meta {
-  text-align: right;
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 3rem;
-}
-
-hr {
-  margin: 2rem 0;
+  color: $blue; // Subtle pop for headings
+  font-weight: 700;
+  margin-top: 2rem;
 }
 
 p {
-  margin: 1rem 0;
+  color: opacity-alteration($fg-colour, 0.9); // Softens long-form text slightly
 }
 
-li {
-  margin: 0.4rem 0;
+.meta-text {
+  color: $grey-comment; // For dates, "5 min read", etc.
+}
+
+a {
+  color: $fg-colour;
+  text-decoration: none;
+  border-bottom: 2px solid $yellow;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: $yellow;
+    border-bottom-color: $pink;
+  }
+}
+
+hr {
+  margin: 1rem 2rem;
+}
+
+::selection {
+  // text selected
+  background: $selection-bg;
+  color: $yellow;
 }
 
 *:target {
-  background: yellow;
+  // selecting backlinks and such
+  background-color: rgba($yellow, 0.12); // A soft 12% opacity wash of your Monokai yellow
+  border-left: 3px solid $yellow;
+  padding-left: 0.75rem;
+  scroll-margin-top: 2rem;
 }
 
-table {
-  width: 100%;
-}
+// my specific classes
+blockquote {
+  font-style: italic;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-left: 4px solid $blue;
+  background-color: rgba($bg-secondary, 0.5);
+  color: lighten($grey-comment, 20%);
+  border-radius: 0 4px 4px 0;
 
-table,
-th,
-td {
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4rem;
+  p {
+    margin: 0;
+  }
 }
 
 div.highlighter-rouge code {
@@ -86,40 +105,143 @@ div.highlighter-rouge code {
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
-}
 
-blockquote {
-  font-style: italic;
-  border: thin solid black;
-  padding: 1rem;
-
-  p {
-    margin: 0;
-  }
+  background-color: $bg-secondary;
+  color: $fg-colour;
+  border-radius: 4px;
+  border: 1px solid darken($bg-secondary, 5%);
 }
 
 img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+
+  border-radius: 4px;
+  border: 1px solid $bg-secondary;
 }
 
-.content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-.back-link{
+.back-link {
   text-decoration: none;
+
+  font-family: monospace; // A nice touch for functional "return" links
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $yellow;
+  }
+
+  &::before {
+    content: "← ";
+    color: $grey-comment;
+  }
 }
 
-.sign-off{
+.sign-off {
   text-align: right;
   font-style: italic;
+
+  color: $green;
+  margin-top: 2rem;
 }
 
 .footer {
-  font-size: xx-small;
+  font-size: 0.8rem;
   font-weight: 300;
+  color: $grey-comment;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px dashed $bg-secondary;
+}
+
+// if user prefers a light theme
+@media (prefers-color-scheme: light) {
+  $light-bg: $fg-colour;
+  $light-fg: $bg-colour;
+  $light-secondary: #e6e6e0;
+  $light-comment: $grey-comment;
+
+  // darken accents for readability
+  $dark-yellow: darken($yellow, 35%);
+  $dark-pink: darken($pink, 15%);
+  $dark-blue: darken($blue, 35%);
+  $dark-green: darken($green, 25%);
+  $dark-orange: darken($orange, 20%);
+
+  // Apply the overrides to the body and elements
+  body {
+    background-color: $light-bg;
+    color: $light-fg;
+  }
+
+  p {
+    color: rgba($light-fg, 0.9);
+  }
+
+  .meta-text {
+    color: $light-comment;
+  }
+
+  a {
+    color: $light-fg;
+    border-bottom: 2px solid $dark-orange;
+
+    &:hover {
+      color: $dark-orange;
+      border-bottom-color: $dark-pink;
+    }
+  }
+
+  hr {
+    border-color: $light-secondary;
+  }
+
+  ::selection {
+    background: rgba($dark-orange, 0.2);
+    color: $light-fg;
+  }
+
+  *:target {
+    background-color: rgba($dark-orange, 0.1);
+    border-left-color: $dark-orange;
+  }
+
+  blockquote {
+    border-left-color: $dark-blue;
+    background-color: rgba($light-secondary, 0.5);
+    color: darken($light-comment, 15%);
+
+    p {
+      color: darken($light-comment, 15%);
+    }
+  }
+
+  div.highlighter-rouge code {
+    background-color: $light-secondary;
+    color: $light-fg;
+    border-color: darken($light-secondary, 5%);
+  }
+
+  img {
+    border-color: $light-secondary;
+  }
+
+  .back-link {
+    &:hover {
+      color: $dark-orange;
+    }
+
+    &::before {
+      color: $light-comment;
+    }
+  }
+
+  .sign-off {
+    color: $dark-green;
+  }
+
+  .footer {
+    color: $light-comment;
+    border-top-color: darken($light-secondary, 5%);
+  }
 }
