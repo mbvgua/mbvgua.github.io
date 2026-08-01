@@ -5,3 +5,4 @@ Here is a list of websites that I used as inspiration:
 - [clarevoyant](https://clarebir.ch/) is the site that helped me figure out the theme to use
 - [elly](https://elly.town/) inspired the rather technical details included in the site
 - [sophed](https://soph.systems/) inspired my own monokai based theme
+- [pgregory](https://pgregory.net/) - for hugo transition
