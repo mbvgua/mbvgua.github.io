@@ -1,5 +1,5 @@
-# Default environment variable mimicking GitHub Actions
-JEKYLL_ENV ?= production
+# Default environment variables
+HUGO_ENV ?= production
 BASEURL ?= ""
 
 .PHONY: all install build serve clean
@@ -7,23 +7,23 @@ BASEURL ?= ""
 # Default target when you just run 'make'
 all: install build
 
-# Installs the project gems locally (mimics bundler-cache: true)
+# Installs Hugo modules and Go dependencies
 install:
 	@echo "Installing project dependencies..."
-	bundle config set --local path 'vendor/bundle'
-	bundle install
+	@if [ -f "go.mod" ]; then go mod download; fi
+	hugo mod get -u
 
-# Builds the static site (mimics the Jekyll Build action step)
+# Builds the static site (mimics production build step)
 build:
-	@echo "Building Jekyll site for environment: $(JEKYLL_ENV)..."
-	JEKYLL_ENV=$(JEKYLL_ENV) bundle exec jekyll build --baseurl $(BASEURL)
+	@echo "Building Hugo site for environment: $(HUGO_ENV)..."
+	HUGO_ENV=$(HUGO_ENV) hugo --minify --gc $(if $(BASEURL),--baseURL $(BASEURL),)
 
-# Bonus: Locally preview your site with live reloading
+# Locally preview your site with live reloading (Hugo server includes livereload by default)
 serve:
-	@echo "Starting local development server..."
-	bundle exec jekyll serve --livereload
+	@echo "Starting local Hugo development server..."
+	hugo server --buildDrafts --buildFuture --disableFastRender
 
-# Cleans up the built site and vendor files if you want a fresh start
+# Cleans up the built site and cached generated files
 clean:
 	@echo "Cleaning up build artifacts..."
-	rm -rf _site .jekyll-cache .bundle vendor
+	rm -rf public resources/_gen .hugo_build.lock

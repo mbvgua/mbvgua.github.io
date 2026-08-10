@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <div class="nav">
+    {{ partial "back_link.html" . }}
+  </div>
+
+  <div class="project">
+    Redirecting to <a href="{{ .Params.repo }}">{{ .Params.repo }}</a>...
+  </div>
+{{ end }}

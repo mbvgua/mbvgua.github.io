@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="nav">
+    {{ partial "back_link.html" . }}
+  </div>
+
+  <h2> Archive </h2>
+
+  <div>
+    {{ range where .Site.RegularPages "Section" "posts" }}
+      <div>
+        <h3 class="post-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h3>
+        <time class="meta-text" datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+          {{ .PublishDate.Format "Jan 2, 2006" }}
+        </time>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

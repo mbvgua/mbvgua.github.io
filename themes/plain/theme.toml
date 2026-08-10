@@ -1,0 +1,11 @@
+name = "Plain"
+license = "MIT"
+description = ""
+homepage = ""
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Gregory Petrosyan"
+  homepage = ""
