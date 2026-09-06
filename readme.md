@@ -1,20 +1,8 @@
 <link rel="stylesheet" href="./static/css/style.css">
 
-Hi! I am a programmer and floss enthusiast who enjoys learning by doing. This is my, (in)frequently updated site, which contains documentation to some of the things I have done or are currently doing.
-
-> "The limits of my language are the limits of my mind. All I know is what I have words for"
-> <cite>~ Ludwig Wittgenstein</cite>
-
 ## Projects
 
 For a complete list of projects I have worked on, view my [github](https://github.com/mbvgua). Currently, I am working through:
-
-- _Fullstack Open_: [source & notes](https://github.com/fullstack-open.git)
-- _dwella_: [source](https://github.com/mbvgua/dwella.git)
-- _let me C_: [source](https://github.com/mbvgua/let-me-c.git). my journey towards mastering the C programming language, hopefully :)
-- _scom_: [source](https://github.com/mbvgua/scom.git)
-
-See [more projects](./content/projects/readme.md)
 
 ## Blog Posts
 
