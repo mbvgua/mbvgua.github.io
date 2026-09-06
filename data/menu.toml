@@ -1,16 +1,5 @@
 [[entries]]
-title = "projects"
-
-[entries.post_list]
-limit = 3
-show_more = true
-section = "projects"
-show_more_text = "view all projects ↗"
-show_more_url = "projects"
-
-
-[[entries]]
-title = "writing"
+title = "articles..."
 
 [entries.post_list]
 limit = 5
@@ -18,6 +7,17 @@ show_more = true
 section = "posts"
 show_more_text = "read the archive ↗"
 show_more_url = "posts"
+
+
+[[entries]]
+title = "projects I'm proud of"
+
+[entries.post_list]
+limit = 3
+show_more = true
+section = "projects"
+show_more_text = "view all projects ↗"
+show_more_url = "projects"
 
 
 [[entries]]

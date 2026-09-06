@@ -6,3 +6,5 @@ draft = true
 +++
 
 # Makefiles are Amazing!
+
+![nice](/image.png)

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,9 +12,13 @@
 
     <!-- redirect github project to the source code -->
     {{ if .Params.repo -}}
-      <meta name="go-import" content="{{ .Site.Params.shortName }}{{ substr .RelPermalink 0 -1 }} git {{ .Params.repo }}">
-      <meta name="go-source" content="{{ .Site.Params.shortName }}{{ substr .RelPermalink 0 -1 }} {{ .Params.repo }} {{ .Params.repo }}/tree/master{/dir} {{ .Params.repo }}/blob/master{/dir}/{file}#L{line}">
-      <meta http-equiv="refresh" content="1; url={{ .Params.repo }}">
+        <meta name="go-import" content="{{ .Site.Params.shortName }}{{ substr .RelPermalink 0 -1 }} git {{ .Params.repo }}">
+        <meta name="go-source" content="{{ .Site.Params.shortName }}{{ substr .RelPermalink 0 -1 }} {{ .Params.repo }} {{ .Params.repo }}/tree/main{/dir} {{ .Params.repo }}/blob/main{/dir}/{file}#L{line}">
+
+        {{/* Only redirect if the page has no body text written */}}
+        {{ if eq .WordCount 0 -}}
+            <meta http-equiv="refresh" content="1; url={{ .Params.repo }}">
+        {{- end }}
     {{- end }}
     <!-- end redirection logic -->
 
@@ -30,9 +32,8 @@
 
     <!-- Asset pipeline: bundles reboot, syntax, and index.css -->
     {{- $reboot := resources.Get "css/bootstrap-reboot.css" -}}
-    {{- $syntax := resources.Get "css/syntax.css" -}}
     {{- $custom := resources.Get "css/index.css" -}}
-    {{- $style := slice $reboot $syntax $custom | resources.Concat "css/style.css" | minify -}}
+    {{- $style := slice $reboot $custom | resources.Concat "css/style.css" | minify -}}
     <style>{{ $style.Content | safeCSS }}</style>
   </head>
   <body>

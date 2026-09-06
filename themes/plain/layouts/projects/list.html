@@ -8,7 +8,7 @@
   <div>
     {{ range (where .Site.RegularPages "Section" "projects").ByParam "sort" }}
       <dl>
-        <dt style="text-transform: capitalize;">
+        <dt >
           <h3> <a href="{{ .RelPermalink }}">{{ .Title }}</a> </h3>
         </dt>
         <dd style="color:#75715e">

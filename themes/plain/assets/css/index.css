@@ -99,37 +99,24 @@ hr {
 }
 
 blockquote {
-  position: relative;
-  margin: 2.5rem 0  0 5rem;
-  padding-left: 2rem; /* Clears room for the giant quote mark on the left */
-  border: none; /* Removes standard left border */
-  background: transparent;
-}
-
-/* Floating giant quote mark */
-blockquote::before {
-  content: "“";
-  position: absolute;
-  top: -1.2rem;
-  left: -5rem;
-  font-size: 12rem;
-  font-family: Georgia, serif;
-  line-height: 1;
-  color: color-mix(in srgb, var(--grey-comment, #888888), transparent 50%);
-  user-select: none;
-  pointer-events: none;
+  padding: 1rem; /* Clears room for the giant quote mark on the left */
+  border-left: 0.8rem solid var(--grey-comment);
+  background-color: color-mix(
+    in srgb,
+    var(--grey-comment, #888888),
+    transparent 90%
+  );
 }
 
 /* Quote Body Text */
 blockquote p {
-  margin-bottom: 0.5rem;
-  color: var(--grey-comment, #666666);
+  color: var(--grey-comment);
 }
 
 /* Author / Attribution text at the bottom */
 blockquote cite {
   display: block;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   color: var(--grey-comment, #666666);
 }
 
