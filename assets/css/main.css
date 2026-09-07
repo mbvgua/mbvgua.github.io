@@ -71,12 +71,14 @@ hr {
 
 blockquote {
   font-style: italic;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   /* Clears room for the giant quote mark on the left */
   border-left: 0.8rem solid var(--grey-comment);
-  background-color: color-mix(in srgb,
-      var(--grey-comment, #888888),
-      transparent 90%);
+  background-color: color-mix(
+    in srgb,
+    var(--grey-comment, #888888),
+    transparent 90%
+  );
   border-radius: 0 4px 4px 0;
 }
 
@@ -135,7 +137,7 @@ ul ul li::marker {
   font-family: monospace;
 
   &::before {
-    content: "../ ";
+    /* content: "../ "; */
     color: var(--grey-comment);
   }
 }
