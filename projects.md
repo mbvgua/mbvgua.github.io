@@ -1,5 +1,5 @@
 ---
 layout: archive
 which_category: project
-title: Projects
+title: Archive
 ---

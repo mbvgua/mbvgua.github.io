@@ -1,9 +1,8 @@
-+++
-title = "Docker in 4 easy pieces"
+---
 date = 2026-03-01
-tags = ["tech", "containers"]
-draft = true
-+++
+layout: post
+category: blog
+---
 
 # Docker in 4 Easy Pieces
 
