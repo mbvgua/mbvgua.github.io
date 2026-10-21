@@ -12,10 +12,24 @@
 
     {% if page.custom_js %}
       {% for js_file in page.custom_js %}
-        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/static/js/{{ js_file }}.js"></script>
       {% endfor %}
     {% endif %}
   </body>
+
+  <script>
+    // ensures all links are opened inexternal tab
+    document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a");
+        links.forEach((link) => {
+            // Check if the link goes to an external site
+            if (link.hostname !== window.location.hostname) {
+                link.setAttribute("target", "_blank");
+                link.setAttribute("rel", "noopener noreferrer");
+            }
+        });
+    });
+  </script>
 
     {%-include footer.html-%}
 

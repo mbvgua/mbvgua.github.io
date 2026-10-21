@@ -1,0 +1,44 @@
+{% if page.carousel_images and page.project_name %}
+<div class="carousel" data-carousel>
+  <div class="carousel-viewport">
+    <div class="carousel-track" data-carousel-track>
+      {% for img in page.carousel_images %}
+      <div class="carousel-slide">
+        <img
+          src="/static/images/projects/{{ page.project_name }}/{{ img }}"
+          alt="Project image {{ forloop.index }}"
+          loading="lazy"
+        />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if page.carousel_images.size > 1 %}
+  <button
+    class="carousel-btn prev"
+    data-carousel-btn="prev"
+    aria-label="Previous slide"
+  >
+    &lsaquo;
+  </button>
+  <button
+    class="carousel-btn next"
+    data-carousel-btn="next"
+    aria-label="Next slide"
+  >
+    &rsaquo;
+  </button>
+
+  <div class="carousel-dots" data-carousel-dots>
+    {% for img in page.carousel_images %}
+    <button
+      class="carousel-dot {% if forloop.first %}active{% endif %}"
+      data-carousel-dot="{{ forloop.index0 }}"
+      aria-label="Slide {{ forloop.index }}"
+    ></button>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}

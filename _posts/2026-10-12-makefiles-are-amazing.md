@@ -1,7 +1,9 @@
 ---
-date: 2026-03-01
+date: 2026-10-01
 layout: post
 category: blog
+tags: linux scripting
+draft: true
 ---
 
 ![nice](/image.png)

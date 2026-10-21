@@ -1,12 +1,18 @@
-title: mbugua's blog
+title: Mbugua Douglas
+tagline:
+  - Software Engineer
+  - Linux Enthusiast
+  # - Backend Developer
+  # - Security Analyst
 author: mbugua
 email: mbvgua+dev@gmail.com
+github_username: mbvgua
 description: > # description of the site (multiple lines allowed)
   my space to put things on the internet
 baseurl: ""
 url: ""
 
-favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
+# favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
 
 # figure out how to remove this, use "global.scss" theme instead
 theme: no-style-please
