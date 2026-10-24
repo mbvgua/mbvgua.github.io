@@ -4,16 +4,12 @@ layout: home
 
 Hi! I’m Mbugua. A backend-heavy fullstack developer working primarily across Python, Java, and TypeScript stacks. I spend most of my time shipping code, diving into *nix system administration, and using containerization and [scripting](https://people.cs.georgetown.edu/~clay/classes/spring2010/os/inthebeginning.pdf) to keep deployments smooth and reliable. This is my (in)frequently updated corner of the web, where I document what I’m building, learning, and breaking.
 
-> "The limits of my language are the limits of my mind. All I know is what I have words for"
-> <cite>~ Ludwig Wittgenstein</cite>
-
 ## Projects & Learning
 
 Currently expanding my backend engineering expertise and sharpening my core Computer Science fundamentals through the following hands-on projects
 
-- [_Learning Java_](https://java-programming.mooc.fi/): [source](https://github.com/mbvgua/let-me-java.git)
 - _Hogwarts_: [source](https://github.com/mbvgua/hogwarts.git)
-- [_Teach Yourself CS_](https://teachyourselfcs.com/)
+- [_Learning Java_](https://java-programming.mooc.fi/): [source](https://github.com/mbvgua/let-me-java.git)
 
 [View more...](archive_projects.html)
 

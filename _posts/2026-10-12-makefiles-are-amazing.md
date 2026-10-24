@@ -5,5 +5,3 @@ category: blog
 tags: linux scripting
 draft: true
 ---
-
-![nice](/image.png)

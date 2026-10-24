@@ -2,6 +2,7 @@
 date: 2026-10-10
 layout: post
 category: blog
+draft: true
 tags: linux scripting bash
 ---
 

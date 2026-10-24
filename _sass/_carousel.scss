@@ -1,0 +1,101 @@
+// ---------------------------------------------------------------------------
+// Image Carousel Component
+// ---------------------------------------------------------------------------
+.carousel {
+  position: relative;
+  margin: 2rem 0;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background-color: var(--bg);
+  overflow: hidden;
+
+  .carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: color-mix(in srgb, var(--rule), transparent 85%);
+
+    img {
+      max-height: 500px;
+      width: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  // Navigation Buttons
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg);
+    color: var(--fg);
+    border: 1px solid var(--rule);
+    font-family: $alt-font;
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 2;
+
+    &:hover {
+      background: var(--rule);
+      color: var(--link);
+    }
+
+    &.prev {
+      left: 0.8rem;
+    }
+
+    &.next {
+      right: 0.8rem;
+    }
+  }
+
+  // Indicators / Dots
+  .carousel-dots {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--fg);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s ease;
+
+      &.active {
+        background: var(--fg);
+        transform: scale(1.2);
+      }
+    }
+  }
+}

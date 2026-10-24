@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+
+// ---------------------------------------------------------------------------
+// Palette
+// ---------------------------------------------------------------------------
+$monokai-bg: #272822;
+$monokai-surface: #3e3d32;
+$monokai-fg: #f8f8f2;
+$monokai-comment: #75715e;
+
+$main-font: "Lora", serif;
+$alt-font: "JetBrains Mono", monospace;
+
+// ---------------------------------------------------------------------------
+// Theme Variables
+// ---------------------------------------------------------------------------
+:root {
+  color-scheme: light;
+
+  --bg: #fdfcf7;
+  --fg: #2b2a24;
+  --muted: #{$monokai-comment};
+  --rule: #ded9c4;
+
+  --link: #1f6f8b;
+  --link-hover: #0f4c61;
+
+  --selection-bg: #d6d3bd;
+  --selection-fg: #{$monokai-bg};
+
+  // Surface tokens (code blocks stay Monokai)
+  --surface: #{$monokai-surface};
+  --surface-fg: #{$monokai-fg};
+  --quote-bar: #{$monokai-comment};
+
+  --main-font: #{$main-font};
+  --alt-font: #{$alt-font};
+}

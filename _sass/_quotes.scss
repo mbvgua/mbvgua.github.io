@@ -1,0 +1,42 @@
+/* Quotes Layout Styling */
+.quotes-content {
+  margin-top: 2rem;
+
+  ul {
+    list-style: none;
+    /* Hide default bullets */
+    counter-reset: quote-counter;
+    /* Start our counter */
+    padding: 0;
+    margin: 0;
+
+    li {
+      counter-increment: quote-counter;
+      /* Count each bullet item */
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 2.5rem;
+      /* Make space for the custom number */
+      line-height: 1.6;
+      font-style: italic;
+
+      /* Generate the numbers automatically */
+      &::before {
+        content: counter(quote-counter, decimal-leading-zero);
+        /* Outputs 01, 02, 03... */
+        position: absolute;
+        left: 0;
+        top: -0.1rem;
+        font-style: normal;
+        opacity: 0.5;
+        font-family: monospace;
+        /* Gives it a nice clean terminal/dev feel */
+      }
+
+      /* Ensures paragraph tags inside list items don't add extra margins */
+      p {
+        margin: 0 0 0.4rem 0;
+      }
+    }
+  }
+}
